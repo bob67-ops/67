@@ -1,0 +1,232 @@
+_G.ClaimRewards = true -- Claims lobby rewards after matches
+_G.AutoPickups = true -- Collects event pickups/tokens in match
+_G.AutoSkip = false -- Automatically votes to skip waves
+_G.AntiLag = false -- Reduces effects/animations to lower lag
+_G.AutoRestart = true -- Enables post-match handling; false leaves the result screen untouched
+_G.RejoinLoss = true -- On loss: true returns to lobby, false restarts and replays the saved strategy
+_G.TimeScale = false -- Enables the time scale settings below
+
+-- [[ WEBHOOK SETTINGS ]]
+_G.SendWebhook = false -- Sends match result notifications to webhook
+_G.Webhook = "YOUR-WEBHOOK-URL-HERE" -- Discord webhook URL
+
+-- [[ INITIALIZE LIBRARY ]]
+local TDS = loadstring(game:HttpGet("https://f.spacehub.wtf/Scripts/TDS/Recorders/Library.lua"))()
+
+-- [[ START STRATEGY ]]
+TDS:Loadout("Shotgunner", "Farm", "Boomerang", "None", "None")
+TDS:Mode("Hardcore Easy")
+TDS:GameInfo("Wretched Front", {})
+
+-- [[ TIME SCALE SETTINGS ]]
+if _G.TimeScale then
+    TDS:UnlockTimeScale()
+    TDS:TimeScale(2)
+end
+
+TDS:Place("Farm", -12.11, 1.56, 24.33) -- 1
+TDS:Place("Farm", -11.95, 1.52, 27.87) -- 2
+TDS:Place("Farm", -12.03, 1.46, 31.44) -- 3
+TDS:Ready()
+TDS:Upgrade(1)
+
+-- [ Wave 1 ] --
+TDS:Upgrade(2)
+TDS:Upgrade(3)
+
+-- [ Wave 2 ] --
+TDS:Upgrade(1)
+
+-- [ Wave 3 ] --
+TDS:Upgrade(2)
+TDS:Upgrade(3)
+
+-- [ Wave 4 ] --
+TDS:Place("Farm", -11.97, 1.37, 35.28) -- 4
+TDS:Upgrade(4)
+TDS:Place("Farm", -12.10, 1.27, 38.86) -- 5
+TDS:Upgrade(5)
+
+-- [ Wave 5 ] --
+TDS:Place("Boomerang", 9.86, 1.28, 22.40) -- 6
+TDS:Upgrade(6)
+TDS:Upgrade(4)
+
+-- [ Wave 6 ] --
+TDS:Upgrade(5)
+TDS:Place("Farm", -12.16, 1.15, 42.80) -- 7
+TDS:Upgrade(7)
+TDS:Upgrade(7)
+
+-- [ Wave 7 ] --
+TDS:Place("Farm", -15.93, 1.53, 24.19) -- 8
+TDS:Upgrade(8)
+TDS:Upgrade(8)
+TDS:Place("Farm", -15.53, 1.55, 27.81) -- 9
+TDS:Upgrade(9)
+
+-- [ Wave 8 ] --
+TDS:Upgrade(1)
+TDS:Upgrade(8)
+
+-- [ Wave 9 ] --
+TDS:Upgrade(2)
+TDS:Upgrade(3)
+TDS:Upgrade(4)
+
+-- [ Wave 10 ] --
+TDS:Upgrade(5)
+TDS:Upgrade(7)
+TDS:Upgrade(6)
+
+-- [ Wave 11 ] --
+TDS:Upgrade(6)
+TDS:Upgrade(9)
+TDS:Upgrade(9)
+TDS:Place("Farm", -15.91, 1.53, 31.46) -- 10
+
+-- [ Wave 12 ] --
+TDS:Upgrade(10)
+TDS:Upgrade(10)
+TDS:Upgrade(10)
+TDS:Place("Farm", -15.91, 1.45, 35.21) -- 11
+TDS:Upgrade(11)
+TDS:Upgrade(11)
+TDS:Upgrade(11)
+
+-- [ Wave 13 ] --
+TDS:Place("Shotgunner", 15.40, 1.16, 29.38) -- 12
+TDS:Upgrade(12)
+TDS:Upgrade(12)
+
+-- [ Wave 14 ] --
+TDS:Place("Shotgunner", 13.28, 1.19, 29.53) -- 13
+TDS:Upgrade(13)
+TDS:Upgrade(13)
+TDS:Upgrade(6)
+
+-- [ Wave 15 ] --
+TDS:Upgrade(8)
+TDS:Upgrade(1)
+TDS:Upgrade(9)
+
+-- [ Wave 16 ] --
+TDS:Upgrade(2)
+TDS:Upgrade(10)
+TDS:Upgrade(3)
+
+-- [ Wave 17 ] --
+TDS:Upgrade(11)
+TDS:Upgrade(4)
+TDS:Upgrade(5)
+
+-- [ Wave 18 ] --
+TDS:Upgrade(7)
+TDS:Place("Boomerang", 6.76, 1.33, 22.42) -- 14
+TDS:Upgrade(14)
+TDS:Upgrade(14)
+TDS:Upgrade(14)
+
+-- [ Wave 19 ] --
+TDS:Upgrade(14)
+TDS:Place("Shotgunner", 15.42, 1.13, 27.19) -- 15
+TDS:Upgrade(15)
+TDS:Upgrade(15)
+TDS:Place("Shotgunner", 13.36, 1.22, 27.01) -- 16
+TDS:Upgrade(16)
+TDS:Upgrade(16)
+TDS:Place("Shotgunner", 15.18, 1.06, 25.12) -- 17
+TDS:Upgrade(17)
+
+-- [ Wave 20 ] --
+TDS:Upgrade(17)
+TDS:Place("Shotgunner", 13.05, 1.19, 24.80) -- 18
+TDS:Upgrade(18)
+TDS:Upgrade(18)
+TDS:Place("Shotgunner", 15.31, 1.02, 23.11) -- 19
+TDS:Upgrade(19)
+TDS:Upgrade(19)
+TDS:Place("Shotgunner", 13.20, 1.17, 22.70) -- 20
+TDS:Upgrade(20)
+
+-- [ Wave 21 ] --
+TDS:Upgrade(20)
+TDS:Upgrade(20)
+
+-- [ Wave 22 ] --
+TDS:Upgrade(19)
+TDS:Upgrade(18)
+
+-- [ Wave 23 ] --
+TDS:Upgrade(17)
+TDS:Upgrade(16)
+
+-- [ Wave 24 ] --
+TDS:Upgrade(15)
+TDS:Upgrade(12)
+
+-- [ Wave 25 ] --
+TDS:Upgrade(13)
+TDS:Place("Boomerang", 8.22, 1.02, 19.71) -- 21
+TDS:Place("Boomerang", 3.47, 1.37, 22.52) -- 22
+TDS:Place("Boomerang", 4.91, 1.17, 19.62) -- 23
+TDS:Upgrade(23)
+TDS:Upgrade(23)
+TDS:Upgrade(23)
+TDS:Upgrade(22)
+TDS:Upgrade(22)
+TDS:Upgrade(22)
+TDS:Upgrade(21)
+TDS:Upgrade(21)
+TDS:Upgrade(21)
+
+-- [ Wave 26 ] --
+TDS:Upgrade(21)
+
+-- [ Wave 27 ] --
+TDS:Upgrade(23)
+TDS:Upgrade(22)
+
+-- [ Wave 28 ] --
+TDS:Place("Boomerang", 6.55, 1.39, 27.95) -- 24
+TDS:Upgrade(24)
+TDS:Upgrade(24)
+TDS:Upgrade(24)
+TDS:Upgrade(24)
+TDS:Place("Boomerang", 6.53, 1.38, 31.05) -- 25
+TDS:Upgrade(25)
+TDS:Upgrade(25)
+TDS:Upgrade(25)
+TDS:Upgrade(25)
+
+-- [ Wave 29 ] --
+TDS:Place("Boomerang", 3.11, 1.42, 27.96) -- 26
+TDS:Place("Boomerang", 3.27, 1.43, 31.00) -- 27
+TDS:Place("Boomerang", 6.05, 1.38, 34.21) -- 28
+TDS:Place("Boomerang", 2.81, 1.43, 34.32) -- 29
+TDS:Upgrade(29)
+TDS:Upgrade(29)
+TDS:Upgrade(28)
+TDS:Upgrade(28)
+TDS:Upgrade(28)
+TDS:Upgrade(29)
+
+-- [ Wave 30 ] --
+TDS:Upgrade(27)
+TDS:Upgrade(27)
+TDS:Upgrade(27)
+TDS:Upgrade(26)
+TDS:Upgrade(26)
+TDS:Upgrade(26)
+TDS:Upgrade(26)
+TDS:Upgrade(27)
+TDS:Place("Boomerang", 0.19, 1.45, 28.72) -- 30
+TDS:Upgrade(30)
+TDS:Upgrade(30)
+TDS:Sell(13)
+TDS:Place("Shotgunner", -3.57, 1.42, 38.95) -- 31
+TDS:Upgrade(31)
+TDS:Upgrade(31)
+TDS:Upgrade(31)
+
+-- [[ END OF STRATEGY ]]
